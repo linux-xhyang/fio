@@ -15,6 +15,8 @@
 #include <linux/unistd.h>
 #include <linux/major.h>
 #include <asm/byteorder.h>
+#include <byteswap.h>
+
 
 #include "binject.h"
 #include "../file.h"
@@ -84,7 +86,7 @@ static inline int shmget (key_t __key, size_t __size, int __shmflg)
 {
 	int fd,ret;
 	char key[11];
-	
+
 	fd = open(ASHMEM_DEVICE, O_RDWR);
 	if (fd < 0)
 		return fd;
@@ -99,7 +101,7 @@ static inline int shmget (key_t __key, size_t __size, int __shmflg)
 		goto error;
 
 	return fd;
-	
+
 error:
 	close(fd);
 	return ret;
@@ -212,9 +214,9 @@ static inline long os_random_long(os_random_state_t *rs)
 #define FIO_O_NOATIME	0
 #endif
 
-#define fio_swap16(x)	__bswap_16(x)
-#define fio_swap32(x)	__bswap_32(x)
-#define fio_swap64(x)	__bswap_64(x)
+#define fio_swap16(x)	bswap_16(x)
+#define fio_swap32(x)	bswap_32(x)
+#define fio_swap64(x)	bswap_64(x)
 
 #define CACHE_LINE_FILE	\
 	"/sys/devices/system/cpu/cpu0/cache/index0/coherency_line_size"

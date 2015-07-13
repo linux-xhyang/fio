@@ -13,6 +13,7 @@
 #include <string.h>
 #include <inttypes.h>
 #include <assert.h>
+#include <stdint.h>
 
 #include "compiler/compiler.h"
 #include "thread_options.h"

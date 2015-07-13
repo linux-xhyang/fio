@@ -282,9 +282,11 @@ static int endian_check(void)
 		le = 1;
 
 #if defined(CONFIG_LITTLE_ENDIAN)
+        printf("CONFIG_LITTLE_ENDIAN\n");
 	if (be)
 		return 1;
 #elif defined(CONFIG_BIG_ENDIAN)
+        printf("CONFIG_BIG_ENDIAN\n");
 	if (le)
 		return 1;
 #else

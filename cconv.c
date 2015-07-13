@@ -1,5 +1,5 @@
 #include <string.h>
-
+#include "os/os.h"
 #include "thread_options.h"
 
 static void string_to_cpu(char **dst, const uint8_t *src)

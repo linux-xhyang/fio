@@ -2,6 +2,7 @@
 #define FIO_VERIFY_H
 
 #include <stdint.h>
+#include "os/os.h"
 
 #define FIO_HDR_MAGIC	0xacca
 

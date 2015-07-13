@@ -314,12 +314,12 @@ static int poll_wait(struct thread_data *td, int fd, short events)
 
 static int fio_netio_is_multicast(const char *mcaddr)
 {
-	in_addr_t addr = inet_network(mcaddr);
+	in_addr_t addr = inet_addr(mcaddr);
 	if (addr == -1)
 		return 0;
 
-	if (inet_network("224.0.0.0") <= addr &&
-	    inet_network("239.255.255.255") >= addr)
+	if (inet_addr("224.0.0.0") <= addr &&
+	    inet_addr("239.255.255.255") >= addr)
 		return 1;
 
 	return 0;
