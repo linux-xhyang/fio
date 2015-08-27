@@ -13,7 +13,7 @@ SOURCE := gettime.c ioengines.c workqueue.c init.c stat.c log.c time.c filesetup
 		cconv.c json.c lib/zipf.c lib/axmap.c lib/gauss.c\
 		lib/lfsr.c gettime-thread.c helpers.c lib/linux-dev-lookup.c lib/flist_sort.c lib/mountcheck.c\
 		lib/hweight.c lib/getrusage.c idletime.c td_error.c \
-		profiles/tiobench.c profiles/act.c io_u_queue.c fio.c
+		profiles/tiobench.c profiles/act.c io_u_queue.c fio.c cgroup.c
 
 SOURCE += diskutil.c fifo.c blktrace.c trim.c profiles/tiobench.c
 
